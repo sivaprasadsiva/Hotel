@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('room_name');
             $table->string('room_desc')->nullable();
             $table->integer('rent_amount');
-            $table->integer('no_min_day');
-            $table->integer('no_max_day');
+            $table->integer('no_booking_day');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

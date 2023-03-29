@@ -5,82 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('assests/login.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
-<div class="box">
-        <h1>Register Now</h1>
-        <form class="form1" method="post" action="{{ route('registerform') }}">
+    <div class="form-box mt-5">
+        <h1>Register</h1>
+        <form action="{{ route('registerform') }}" method="post">
             @csrf
-            <label for="name" class="label1">Name:</label>
-            <input type="text" class="area" name="name" id="first"><br>
+          <div class="form-group">
+             {{-- name field  --}}
+            <label for="name">Username</label>
+            <input class="form-control" id="name" type="text" name="name">
+          </div>
 
-            <label for="email" class="label1">Email:</label>
-            <input type="text" class="area" name="email" id="second"><br>
+          {{-- email field  --}}
+          <div class="form-group">
+            <label for="name">Email</label>
+            <input class="form-control" id="email" type="text" name="email">
+          </div>
 
-            <label for="password" class="label1">Password:</label>
-            <input type="password" class="area" name="password" id="third"><br>
+          {{-- Phone number  --}}
+          <div class="form-group">
+            <label for="name">Mobile Number</label>
+            <input class="form-control" type="tel" id="phone" name="phone" pattern="[56789][0-9]{9}">
+        </div>
 
-            <label for="confirm" class="label1">Confirm Password:</label>
-            <input type="password" class="area" name="confirm" id="four"><br>
+          {{-- Password  --}}
+          <div class="form-group">
+            <label for="email">Password</label>
+            <input class="form-control" id="password" type="password" name="password">
+          </div>
 
-            <input type="submit" value="Register" class="btn" id="ok">
+          <input class="btn btn-primary mt-3" type="submit" value="Submit"/>
+          </div>
         </form>
-    </div>
+      </div>
+
 </body>
 </html>
 
-<!-- <p>Hello Siva</p> -->
-
-
-<!-- <form method="POST" action="{{ route('register') }}">
-    @csrf
-
-    <div>
-        <label for="name">{{ __('Name') }}</label>
-
-        <div>
-            <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus>
-        </div>
-    </div>
-
-    <div>
-        <label for="mobile">{{ __('Mobile Number') }}</label>
-
-        <div>
-            <input id="mobile" type="text" name="mobile" value="{{ old('mobile') }}" required>
-        </div>
-    </div>
-
-    <div>
-        <label for="email">{{ __('Email Address') }}</label>
-
-        <div>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required>
-        </div>
-    </div>
-
-    <div>
-        <label for="password">{{ __('Password') }}</label>
-
-        <div>
-            <input id="password" type="password" name="password" required>
-        </div>
-    </div>
-
-    <div>
-        <label for="password_confirmation">{{ __('Confirm Password') }}</label>
-
-        <div>
-            <input id="password_confirmation" type="password" name="password_confirmation" required>
-        </div>
-    </div>
-
-    <div>
-        <button type="submit">
-            {{ __('Register') }}
-        </button>
-    </div>
-</form> -->
 
 
 
